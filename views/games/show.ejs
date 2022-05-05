@@ -1,0 +1,195 @@
+<%- include('../partials/header') %>
+
+<h3><%= title %></h3>
+<% if (game.clip != null) { %>
+  <video width="480" height="320" controls="controls">
+    <source src="<%= game.clip.clips.full %>" type="video/mp4">
+  </video>
+<% } %>
+<div class="card" style="width: 36rem;">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a 
+				class="nav-link active"
+				id="gameinfo-tab"
+				data-toggle="tab"
+				href="#gameinfo" 
+				role="tab"
+				aria-controls="gameinfo"
+				aria-selected="true"
+			>
+				Game Info
+			</a>
+    </li>
+    <% // This is the tab header for the list of who has the game %>
+    <li class="nav-item">
+      <a
+				class="nav-link"
+				id="collected-tab"
+				data-toggle="tab"
+				href="#collected"
+				role="tab"
+				aria-controls="collected"
+				aria-selected="false"
+			>
+				Collected By
+			</a>
+    </li>
+    <% // This is the tab header for reviews %>
+    <li class="nav-item">
+      <a
+				class="nav-link"
+				id="reviews-tab"
+				data-toggle="tab"
+				href="#reviews"
+				role="tab"
+				aria-controls="reviews"
+				aria-selected="false"
+			>
+				Reviews
+			</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div 
+			class="tab-pane fade show active"
+			id="gameinfo"
+			role="tabpanel"
+			aria-labelledby="gameinfo-tab"
+		>
+      <div class="card-body">
+        <h5 class="card-title"><%= game.name %> </h5>
+        <p class="card-text">Released: <%= game.released %></p>
+        <p class="card-text"><%= game.description_raw %></p>
+        <p>Platforms:</p>
+        <% game.platforms.forEach(p => { %>
+          <p class="card-text"><%= p.platform.name %></p>
+        <% }) %>
+        <p class="card-text">
+					Metacritic Score: <%= game.metacritic ? game.metacritic : 'N/A' %>
+				</p>
+      </div>
+    </div>
+    <div
+    class="tab-pane fade"
+    id="collected"
+    role="tabpanel"
+    aria-labelledby="collected-tab"
+		>
+    <div class="card-body">
+      <p>Collected By:</p>
+      <% // This is the tab that will contain our forEach loop indicating %>
+      <% // who has the game in their collection %>
+      <% collectedBy.forEach(u => { %>
+        <a href="/users/<%= u._id %>"><%= u.name %></a><br>
+      <% }) %>
+         
+      </div>
+    </div>
+    <% // This is the tab that holds the review info for a game %>
+    <div 
+			class="tab-pane fade"
+			id="reviews"
+			role="tabpanel"
+			aria-labelledby="reviews-tab"
+		>
+      <% // This is where we'll put all the info for reviews %>
+    <% let total = 0 %>
+    <% reviews.forEach(r => { %>
+      <% total+= r.rating %>
+      <p>
+        <%= r.rating %> - 
+        <img width="20" id="avatar" src="<%= r.avatar %>" alt="">
+        <%= r.reviewer %>
+      </p>
+      <p><%= r.content %></p>
+    <% }) %>
+    <p>GameGoose Score: <%= (total / reviews.length).toFixed(2) %></p>
+    <% if (!reviews.some(u => {return u.reviewer === user.name}) && collectedBy.some(u => {return u.email === user.email})) { %>
+      <form action="/games/<%= gameId %>/review" method="POST">
+        <div class="form-group">
+          <textarea 
+            class="form-control"
+            name="content"
+            style="width: 18rem;"
+            id="exampleFormControlTextarea1"
+            placeholder="Leave a Review"
+            rows="3"
+        ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Rating</label>
+          <select
+            style="width: 18rem;"
+            class="form-control"
+            name="rating"
+            id="exampleFormControlSelect1"
+          >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+        <input type="text" hidden name="reviewer" value="<%= user.name %>">
+        <input type="text" hidden name="avatar" value="<%= user.avatar %>"> 
+        <button class="btn btn-info">Submit</button>
+      </form>
+    <% } %>
+    </div>
+  </div>
+  <% // We'll put a button to add/remove a game to/from our collection here %>
+  <% if (collectedBy.some(u => {return u.email === user.email})) { %>
+    <form
+      action="/games/<%= game.slug %>/collection?_method=DELETE"
+      method="POST"
+    >
+  <% } else { %>
+    <form action="/games/<%= game.slug %>/collection" method="POST">
+  <% } %>
+    <input type="text" hidden name="title" value="<%= game.name %>">
+    <input type="date" hidden name="released" value="<%= game.released %>">
+    <input 
+      type="number"
+      hidden name="metacriticScore"
+      value="<%= game.metacritic %>"
+    >
+    <input
+      type="text"
+      hidden name="videoUrl"
+      value="<%= game.clip ? game.clip.clips.full : "" %>"
+    >
+    <input
+      type="text"
+      hidden name="imageUrl"
+      value="<%= game.background_image %>"
+    >
+    <input type="number" hidden name="rawgId" value="<%= game.id %>">
+    <input type="text" hidden name="slug" value="<%= game.slug %>">
+    <button 
+      class="btn btn-warning">
+      <%= collectedBy.some(u => {return u.email === user.email}) ? "Remove from Collection" : "Add to Collection" %>
+    </button>
+  </form>
+  <% // We'll put a button to add/remove a game to/from our watchlist here %>
+  <% if (user.watchList.some(g => {return g.slug === game.slug})) { %>
+    <form action="/games/<%= game.slug %>/watch?_method=DELETE" method="POST">
+  <% } else { %>
+    <form action="/games/<%= game.slug %>/watch" method="POST">
+  <% } %>
+    <input type="text" hidden name="title" value="<%= game.name %>">
+    <input type="text" hidden name="slug" value="<%= game.slug %>">
+    <input type="date" hidden name="released" value="<%= game.released %>">
+    <button class="btn btn-success">
+      <%= user.watchList.some(g => {return g.slug === game.slug}) ? "Unwatch" : "Watch" %>
+    </button>
+  </form>
+</div> 
+
+<%- include('../partials/footer') %>

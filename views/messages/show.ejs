@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h3><%= title %></h3>
+<h4><%= message.title %></h4>
+<h5>
+	Posted on <%= message.createdAt.toLocaleString() %> - <%= message.postedBy %>
+	<img id="avatar" width="30" src="<%= message.avatar %>" alt="">
+</h5>
+
+<% message.replies.forEach(reply => { %>
+  <h6>
+		<%= reply.message %> - <%= reply.postedBy %> - 
+		<%= reply.createdAt.toLocaleString() %> 
+		<img id="avatar" width="25" src="<%= reply.avatar %>" alt="">
+	</h6>
+<% }) %>
+
+<form action="/messages/<%= message._id %>" method="POST">
+  <div class="form-group">
+    <input 
+			type="text"
+			class="form-control"
+			aria-describedby="message"
+			name="message"
+			placeholder="Enter reply..."
+		>
+  </div>
+  <button type="submit" class="btn btn-primary">Reply</button>
+</form>
+
+<%- include('../partials/footer') %>

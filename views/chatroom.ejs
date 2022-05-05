@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<h3>Live <%= title %></h3>
+<p>Users in the room:</p>
+<!-- Notice the <ul> here that we'll be appending chatroom users to! -->
+<ul id="chatters"></ul>
+<input type="text" id="avatar" hidden name="avatar" value="<%= user.avatar %>">
+<input type="text" hidden name="username" value="<%= user.name %>" id="username">
+<input type="text" id="message">
+<a class="btn btn-info" href="#" id="send_message">Send Message</a>
+<!-- Oh, this is gonna be COOL!  We're gonna display when someone is typing! -->
+<p id="isTyping"></p>
+<div id="chatroom"></div>
+<!-- This is where we'll loop over the chats with a forEach -->
+<% chats.forEach(c => { %>
+  <p><img id="avatarPhoto" height="30" src="<%= c.avatar %>" alt=""> <%= c.username %>: <%= c.message %> - (<%= c.createdAt.toLocaleString() %>)</p>
+<% }) %>
+<!-- We need to bring in a JavaScript file for this!!! -->
+<script src="/javascripts/chat.js"></script>
+<%- include('partials/footer') %>

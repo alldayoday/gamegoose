@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/error.css">
+  <title>Error</title>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="overlay"></div>
+  <div class="terminal">
+    <img src="/images/goosewitharms.gif" alt="">
+    <h1>Error <span class="errorcode"><%= error.status %></span></h1>
+    <p class="output"><%= message %></p>
+    <p class="output"><a href="/">Return to the homepage</a>.</p>
+    <p class="output"><pre><%= error.stack %></pre></p>
+  </div>
+  <script src="/javascripts/errors.js"></script>
+</body>
+</html>
+

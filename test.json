@@ -1,0 +1,214 @@
+{
+  "id": 59184,
+  "slug": "kingdom-hearts",
+  "name": "Kingdom Hearts",
+  "name_original": "Kingdom Hearts",
+  "description": "<p>Kingdom Hearts is the story of Sora, a 14-year-old boy whose world is shattered when a violent storm hits his island-paradise home, and is separated from his two closest friends, Riku, a 15-year-old boy, and Kairi, a 14-year-old girl. The storm scatters the three to differnt and unknown worlds. At the same time, there&#39;s turmoil in Disney Castle. King Mickey is missing, and Court Wizard Donald and Captain Goofy set out to find him. On their travels they meet Sora on his own search for his lost friends. The three are told of ominous creatures known as the Heartless - beings without hearts derived from an unknown dimension and as it turns out, manipulated by Disney villains and the ones responsible for the devastating storm. Upon discovering the link between the Heartless, the storm and the disappearance of King Mickey, Sora, Donald and Goofy join forces and help familiar Disney heroes to save their worlds.</p>",
+  "metacritic": 85,
+  "metacritic_platforms": [],
+  "released": "2002-03-28",
+  "tba": false,
+  "updated": "2020-02-25T05:31:38",
+  "background_image": "https://media.rawg.io/media/games/bc3/bc3c433821089108642a41a3057f92c5.jpg",
+  "background_image_additional": "https://media.rawg.io/media/screenshots/2bc/2bc7d3b197885a9578df8e351dd668a3.jpg",
+  "website": "",
+  "rating": 4.41,
+  "rating_top": 5,
+  "ratings": [
+      {
+          "id": 5,
+          "title": "exceptional",
+          "count": 129,
+          "percent": 53.97
+      },
+      {
+          "id": 4,
+          "title": "recommended",
+          "count": 86,
+          "percent": 35.98
+      },
+      {
+          "id": 3,
+          "title": "meh",
+          "count": 21,
+          "percent": 8.79
+      },
+      {
+          "id": 1,
+          "title": "skip",
+          "count": 3,
+          "percent": 1.26
+      }
+  ],
+  "reactions": {
+      "1": 1,
+      "4": 2,
+      "5": 2,
+      "10": 1,
+      "11": 2,
+      "12": 2
+  },
+  "added": 468,
+  "added_by_status": {
+      "yet": 30,
+      "owned": 66,
+      "beaten": 280,
+      "toplay": 36,
+      "dropped": 46,
+      "playing": 10
+  },
+  "playtime": 0,
+  "screenshots_count": 11,
+  "movies_count": 0,
+  "creators_count": 11,
+  "achievements_count": 0,
+  "parent_achievements_count": 0,
+  "reddit_url": "",
+  "reddit_name": "",
+  "reddit_description": "",
+  "reddit_logo": "",
+  "reddit_count": 0,
+  "twitch_count": 101,
+  "youtube_count": 1000000,
+  "reviews_text_count": 3,
+  "ratings_count": 236,
+  "suggestions_count": 498,
+  "alternative_names": [
+      "KH",
+      "キングダムハーツ"
+  ],
+  "metacritic_url": "",
+  "parents_count": 0,
+  "additions_count": 0,
+  "game_series_count": 18,
+  "user_game": null,
+  "reviews_count": 239,
+  "saturated_color": "0f0f0f",
+  "dominant_color": "0f0f0f",
+  "parent_platforms": [
+      {
+          "platform": {
+              "id": 2,
+              "name": "PlayStation",
+              "slug": "playstation"
+          }
+      }
+  ],
+  "platforms": [
+      {
+          "platform": {
+              "id": 15,
+              "name": "PlayStation 2",
+              "slug": "playstation2",
+              "image": null,
+              "year_end": null,
+              "year_start": null,
+              "games_count": 1854,
+              "image_background": "https://media.rawg.io/media/games/9d2/9d20a1fc6a860c879d69e40aee288593.jpg"
+          },
+          "released_at": "2002-03-28",
+          "requirements": {}
+      }
+  ],
+  "stores": [],
+  "developers": [
+      {
+          "id": 14687,
+          "name": "Square",
+          "slug": "square",
+          "games_count": 58,
+          "image_background": "https://media.rawg.io/media/games/98c/98c87b286cd2a2ba942167df384a9bd3.jpg"
+      }
+  ],
+  "genres": [
+      {
+          "id": 5,
+          "name": "RPG",
+          "slug": "role-playing-games-rpg",
+          "games_count": 34626,
+          "image_background": "https://media.rawg.io/media/games/c24/c24ec439abf4a2e92f3429dfa83f7f94.jpg"
+      }
+  ],
+  "tags": [
+      {
+          "id": 406,
+          "name": "Story",
+          "slug": "story",
+          "language": "eng",
+          "games_count": 8192,
+          "image_background": "https://media.rawg.io/media/screenshots/439/4397f836727bdd13bd38deeb4f7355bb_GacwmJ9.jpg"
+      },
+      {
+          "id": 744,
+          "name": "friends",
+          "slug": "friends",
+          "language": "eng",
+          "games_count": 13234,
+          "image_background": "https://media.rawg.io/media/screenshots/f39/f3998d8218c3588c629f89dbf52c7794.jpg"
+      },
+      {
+          "id": 997,
+          "name": "island",
+          "slug": "island",
+          "language": "eng",
+          "games_count": 2035,
+          "image_background": "https://media.rawg.io/media/games/d56/d564ee964eb3c17892b3b35dd607f836.jpg"
+      },
+      {
+          "id": 2865,
+          "name": "girl",
+          "slug": "girl",
+          "language": "eng",
+          "games_count": 1613,
+          "image_background": "https://media.rawg.io/media/screenshots/2d3/2d325e729f1fde4cc281cd749763c851.jpg"
+      },
+      {
+          "id": 2006,
+          "name": "castle",
+          "slug": "castle",
+          "language": "eng",
+          "games_count": 1198,
+          "image_background": "https://media.rawg.io/media/screenshots/466/466fb2f9f03bb6decf9d51dbb3f0033e_QaF92EG.jpg"
+      },
+      {
+          "id": 4132,
+          "name": "wizard",
+          "slug": "wizard",
+          "language": "eng",
+          "games_count": 643,
+          "image_background": "https://media.rawg.io/media/screenshots/348/3483d421eb388193dca2dffaeafec540.jpg"
+      }
+  ],
+  "publishers": [
+      {
+          "id": 10212,
+          "name": "Sony Computer Entertainment",
+          "slug": "sony-computer-entertainment",
+          "games_count": 478,
+          "image_background": "https://media.rawg.io/media/games/6c0/6c00ee85d1344f58c469e8e47fd8ae7c.jpg"
+      },
+      {
+          "id": 11194,
+          "name": "Square",
+          "slug": "square",
+          "games_count": 64,
+          "image_background": "https://media.rawg.io/media/screenshots/656/6566c32aebb7b23af0573091132c2f2c.jpg"
+      }
+  ],
+  "esrb_rating": {
+      "id": 2,
+      "name": "Everyone 10+",
+      "slug": "everyone-10-plus"
+  },
+  "clip": {
+      "clip": "https://media.rawg.io/media/stories-640/72a/72a8366d47b52f898bafdee54fb50a51.mp4",
+      "clips": {
+          "320": "https://media.rawg.io/media/stories-320/974/974ca3073f7e0d7598fa6bd77f7bc277.mp4",
+          "640": "https://media.rawg.io/media/stories-640/72a/72a8366d47b52f898bafdee54fb50a51.mp4",
+          "full": "https://media.rawg.io/media/stories/d38/d388a39c227483fd22a515fff23a3781.mp4"
+      },
+      "video": "EIM9P_hUHYo",
+      "preview": "https://media.rawg.io/media/stories-previews/f0e/f0e27b7928deed416c55ba18b9f75323.jpg"
+  },
+  "description_raw": "Kingdom Hearts is the story of Sora, a 14-year-old boy whose world is shattered when a violent storm hits his island-paradise home, and is separated from his two closest friends, Riku, a 15-year-old boy, and Kairi, a 14-year-old girl. The storm scatters the three to differnt and unknown worlds. At the same time, there's turmoil in Disney Castle. King Mickey is missing, and Court Wizard Donald and Captain Goofy set out to find him. On their travels they meet Sora on his own search for his lost friends. The three are told of ominous creatures known as the Heartless - beings without hearts derived from an unknown dimension and as it turns out, manipulated by Disney villains and the ones responsible for the devastating storm. Upon discovering the link between the Heartless, the storm and the disappearance of King Mickey, Sora, Donald and Goofy join forces and help familiar Disney heroes to save their worlds."
+}
